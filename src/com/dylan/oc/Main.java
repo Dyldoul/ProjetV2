@@ -51,7 +51,7 @@ public class Main {
 
                                         do {
                                             System.out.println("Mode Challenger Activé");
-                                            jeu.modChallenger();
+                                            jeu.nombreAlea();
                                             System.out.println();
                                             System.out.println("NOMBRE SECRET ACTIVE");
                                             System.out.println("Serez-vous assez fort pour le trouver ?");
@@ -62,13 +62,14 @@ public class Main {
                                                 System.out.println("Il vous reste "+jeu.getNombreEssai()+" essais");
                                                 System.out.println("Veuillez entrer un nombre a " + jeu.getNombreDeChiffre() + " chiffres");
                                                 System.out.println("--------------------------------------------------");
-                                                reponse = scan.nextInt();
-                                                jeu.checkOrdi(reponse);
+                                                joueur1.setNombreJoueur(scan.nextInt());
+                                                ModeChallenger challenger1 = new ModeChallenger(jeu.getNombreOrdi(),joueur1.getNombreJoueur());
+                                                challenger1.check();
                                                 System.out.println();
 
 
 
-                                            } while (reponse != jeu.getNombreCache() && jeu.getNombreEssai() >= 0);//Condition de sortie du jeu
+                                            } while (joueur1.getNombreJoueur() != jeu.getNombreOrdi() && jeu.getNombreEssai() >= 0);//Condition de sortie du jeu
 
                                             if (jeu.getNombreEssai() < 0) {
 
@@ -96,14 +97,7 @@ public class Main {
                                         System.out.println("Mode Défenseur activé");
                                         System.out.println();
                                         System.out.println("Veuillez entrer votre code secret à "+jeu.getNombreDeChiffre()+" chiffres :");
-                                        int codeSecret = scan.nextInt();
-                                        jeu.modDefenseur(codeSecret);
-                                        System.out.println("Votre code secret est : "+jeu.getNombreCache());
-                                        System.out.println("Votre adversaire a écrit :");
-                                        jeu.essaiOrdi();
-                                        System.out.println("Donner lui des indications :");
-                                        scan.nextLine();//Vide la ligne
-                                        String indic = scan.nextLine();
+
 
                                         break;
 

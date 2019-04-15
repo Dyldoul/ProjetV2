@@ -19,18 +19,17 @@ public class ModeChallenger extends CodeGame{
 
     /**
      * Compare le nombre saisie avec le nombre caché
-     * @param reponseUtilisateur Nombre saisie par l'utilisateur
      */
-    public void checkOrdi(int reponseUtilisateur, CodeGame jeu1){
+    public void check(){
 
         String strCodeSecret = Integer.toString(codeSecret);//Transforme le nombre secret en String
-        String strNbrUser = Integer.toString(reponseUtilisateur);//Transforme le nombre saisie en String
+        String strTestCode = Integer.toString(testCode);//Transforme le nombre saisie en String
         String strIndication = "";//Initialisation de la ligne d'indication
 
         for (int i = 0; i < strCodeSecret.length(); i++){//Boucle pour traité tout les caractère de la String
 
             String chiffreSecret = strCodeSecret.substring(i);//Prend 1 par 1 les caractère de la chaine strNbrCache
-            String chiffreUser = strNbrUser.substring(i);//Prend 1 par 1 les caractère de la chaine strNbrUser
+            String chiffreUser = strTestCode.substring(i);//Prend 1 par 1 les caractère de la chaine strNbrUser
 
             int chfrSec = Integer.parseInt(chiffreSecret);//Passe la String chiffreSecret en int
             int chfrUser = Integer.parseInt(chiffreUser);//Passe la String chiffreUser en int
