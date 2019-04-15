@@ -1,6 +1,6 @@
 package com.dylan.oc;
 
-public class Joueur extends Regle{
+public class Joueur{
 
     private String nom;
     private int nombreJoueur;
@@ -27,10 +27,10 @@ public class Joueur extends Regle{
 
     //Constructeurs
 
-    public Joueur(int nombreDeChiffre, int nombreEssai, String nom, int nombreJoueur) {
-        super(nombreDeChiffre, nombreEssai);
+    public Joueur(String nom) {
+
         this.nom = nom;
-        this.nombreJoueur = nombreJoueur;
+
     }
 
 
