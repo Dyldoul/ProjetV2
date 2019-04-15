@@ -10,7 +10,6 @@ public class Main {
 
         Scanner scan = new Scanner(System.in);
         int choixMenu; //Variable de navigation dans le menu
-        int reponse;//Réponse de l'utilisateur
         char exit; // Variable pour quitter un jeu ou non a la fin
 
         do { // Menu de Départ
@@ -65,6 +64,7 @@ public class Main {
                                                 joueur1.setNombreJoueur(scan.nextInt());
                                                 ModeChallenger challenger1 = new ModeChallenger(jeu.getNombreOrdi(),joueur1.getNombreJoueur());
                                                 challenger1.check();
+                                                jeu.setNombreEssai(jeu.getNombreEssai()-1);
                                                 System.out.println();
 
 
