@@ -4,6 +4,7 @@ public class Joueur{
 
     private String nom;
     private int nombreJoueur;
+    private String indicationJoueur;
 
 
     //Getters & Setters
@@ -24,6 +25,13 @@ public class Joueur{
         this.nombreJoueur = nombreJoueur;
     }
 
+    public String getIndicationJoueur() {
+        return indicationJoueur;
+    }
+
+    public void setIndicationJoueur(String indicationJoueur) {
+        this.indicationJoueur = indicationJoueur;
+    }
 
     //Constructeurs
 

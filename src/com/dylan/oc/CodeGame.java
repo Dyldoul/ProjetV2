@@ -59,7 +59,7 @@ public class CodeGame {
 
     }
 
-    public void nombreAlea(){
+    public void nombreAleatoire(){
 
         String strNombreOrdi = "";//String pour rassembler tout les chiffre aléatoire
 
