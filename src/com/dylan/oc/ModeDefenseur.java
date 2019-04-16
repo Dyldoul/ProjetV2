@@ -43,7 +43,7 @@ public class ModeDefenseur extends CodeGame {
     public void nouveauTestCode(String indicationUser){
 
         String strTestCode = Integer.toString(testCode);//Transforme le nombre en String
-        int nouveauChiffre = 0;
+        int nouveauChiffre;
         String strNouveauCode = "";
 
         for (int i = 0; i < strTestCode.length(); i++) {//Boucle pour traité tout les caractère de la String
@@ -56,19 +56,27 @@ public class ModeDefenseur extends CodeGame {
             if (caracIndicUser == "+"){
 
                 nouveauChiffre = random.nextInt(9-chfrTest)+chfrTest;
+                //nouveauChiffre = random.nextInt(chfrTest-1);
+                String strNouveauChiffre = Integer.toString(nouveauChiffre);
+                strNouveauCode += strNouveauChiffre;
 
             } else if (caracIndicUser == "-"){
 
                 nouveauChiffre = random.nextInt(chfrTest-1);
+                //nouveauChiffre = random.nextInt(9-chfrTest)+chfrTest;
+                String strNouveauChiffre = Integer.toString(nouveauChiffre);
+                strNouveauCode += strNouveauChiffre;
 
             } else if (caracIndicUser == "="){
 
                 nouveauChiffre = chfrTest;
+                String strNouveauChiffre = Integer.toString(nouveauChiffre);
+                strNouveauCode += strNouveauChiffre;
 
             }
 
-            String strNouveauChiffre = Integer.toString(nouveauChiffre);
-            strNouveauCode += strNouveauChiffre;
+            //String strNouveauChiffre = Integer.toString(nouveauChiffre);
+            //strNouveauCode += strNouveauChiffre;
 
         }
 
