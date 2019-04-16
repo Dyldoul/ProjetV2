@@ -5,7 +5,7 @@ public class ModeDefenseur extends CodeGame {
 
     private int codeSecret;//Le nombre a trouvé
     private int testCode;//Un test de code secret
-    private String codePrecedent;//Le code tester précédement
+    private int codePrecedent;//Le code tester précédement
 
     //Getters & Setters
 
@@ -26,10 +26,9 @@ public class ModeDefenseur extends CodeGame {
         this.testCode = testCode;
     }
 
-    public void setCodePrecedent(String codePrecedent) {
+    public void setCodePrecedent(int codePrecedent) {
         this.codePrecedent = codePrecedent;
     }
-
 
     //Constructeur
 
@@ -41,18 +40,39 @@ public class ModeDefenseur extends CodeGame {
 
     //Méthodes
 
-    public void check(String indicationUser){
+    public void nouveauTestCode(String indicationUser){
 
-        String strTestCode = Integer.toString(testCode);//Transforme le nombre saisie en String
+        String strTestCode = Integer.toString(testCode);//Transforme le nombre en String
+        int nouveauChiffre = 0;
+        String strNouveauCode = "";
 
         for (int i = 0; i < strTestCode.length(); i++) {//Boucle pour traité tout les caractère de la String
 
-            String chiffreTest = strTestCode.substring(i);//Prend 1 par 1 les caractère de la chaine strNbrUser
+            String caracIndicUser = indicationUser.substring(i);
+            String chiffreTest = strTestCode.substring(i);
 
+            int chfrTest = Integer.parseInt(chiffreTest);
 
+            if (caracIndicUser == "+"){
 
+                nouveauChiffre = random.nextInt(9-chfrTest)+chfrTest;
+
+            } else if (caracIndicUser == "-"){
+
+                nouveauChiffre = random.nextInt(chfrTest-1);
+
+            } else if (caracIndicUser == "="){
+
+                nouveauChiffre = chfrTest;
+
+            }
+
+            String strNouveauChiffre = Integer.toString(nouveauChiffre);
+            strNouveauCode += strNouveauChiffre;
 
         }
+
+        testCode = Integer.parseInt(strNouveauCode);
 
     }
 }

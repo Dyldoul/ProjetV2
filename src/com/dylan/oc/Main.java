@@ -94,26 +94,46 @@ public class Main {
 
                                     case 2://Lancement du jeu Défenseur
 
-                                        System.out.println("Mode Défenseur activé");
-                                        jeu.nombreAleatoire();
-                                        System.out.println();
-                                        System.out.println("Veuillez entrer votre code secret à "+jeu.getNombreDeChiffre()+" chiffres :");
-                                        System.out.println("--------------------------------------------------");
-                                        joueur1.setNombreJoueur(scan.nextInt());
-                                        System.out.println();
-                                        ModeDefenseur defenseur1 = new ModeDefenseur(joueur1.getNombreJoueur(),jeu.getNombreOrdi());
                                         do {
-
-                                            System.out.println("Votre code secret est : "+defenseur1.getCodeSecret());
-                                            System.out.println("L'ordinateur propose : "+defenseur1.getTestCode());
-                                            System.out.println("Donner lui une indication (+ - =)");
+                                            System.out.println("Mode Défenseur activé");
+                                            jeu.nombreAleatoire();
+                                            System.out.println();
+                                            System.out.println("Veuillez entrer votre code secret à "+jeu.getNombreDeChiffre()+" chiffres :");
                                             System.out.println("--------------------------------------------------");
+                                            joueur1.setNombreJoueur(scan.nextInt());
+                                            System.out.println();
+                                            ModeDefenseur defenseur1 = new ModeDefenseur(joueur1.getNombreJoueur(),jeu.getNombreOrdi());
+                                            do {
+
+                                                System.out.println("Votre code secret est : "+defenseur1.getCodeSecret());
+                                                System.out.println("L'ordinateur propose : "+defenseur1.getTestCode());
+                                                System.out.println("Donner lui une indication (+ - =)");
+                                                System.out.println("--------------------------------------------------");
+                                                scan.nextLine();
+                                                joueur1.setIndicationJoueur(scan.nextLine());
+                                                defenseur1.nouveauTestCode(joueur1.getIndicationJoueur());
+
+
+                                            } while (defenseur1.getCodeSecret() != defenseur1.getTestCode() && jeu.getNombreEssai() >= 0);
+
+                                            if (jeu.getNombreEssai() < 0) {
+
+                                                System.out.println();
+                                                System.out.println("Vous avez perdu ! Vous n'avez pas trouvé le code secret a temps !");
+
+                                            } else {
+                                                System.out.println();
+                                                System.out.println("Félicitation vous avez trouvé le nombre secret !");
+                                            }
+                                            System.out.println();
+                                            System.out.println("Voulez-vous recommencer ? O/N");
                                             scan.nextLine();
-                                            joueur1.setIndicationJoueur(scan.nextLine());
+                                            String str = scan.nextLine();
+                                            exit = str.charAt(0);
 
+                                        } while (exit != 'N' && exit == 'O'); //Recommencer ou non le jeu
 
-                                        } while (defenseur1.getCodeSecret() != defenseur1.getTestCode() && jeu.getNombreEssai() >= 0);
-
+                                        System.out.println();
 
                                         break;
 
