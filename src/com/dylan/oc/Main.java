@@ -29,7 +29,7 @@ public class Main {
                         System.out.println("Que voulez-vous faire ?");
                         System.out.println("1 - Jouer");
                         System.out.println("2 - Paramétrer");
-                        System.out.println("3- Retour");
+                        System.out.println("3 - Retour");
                         System.out.println("---------------------------------------------------");
                         choixMenu = scan.nextInt();
 

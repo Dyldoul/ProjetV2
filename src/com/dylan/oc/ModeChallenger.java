@@ -18,7 +18,7 @@ public class ModeChallenger extends CodeGame{
 
 
     /**
-     * Compare le nombre saisie avec le nombre caché
+     * Compare le nombre saisie avec le code secret
      */
     public void check(){
 
@@ -29,16 +29,16 @@ public class ModeChallenger extends CodeGame{
         for (int i = 0; i < strCodeSecret.length(); i++){//Boucle pour traité tout les caractère de la String
 
             String chiffreSecret = strCodeSecret.substring(i);//Prend 1 par 1 les caractère de la chaine strNbrCache
-            String chiffreUser = strTestCode.substring(i);//Prend 1 par 1 les caractère de la chaine strNbrUser
+            String chiffreTest = strTestCode.substring(i);//Prend 1 par 1 les caractère de la chaine strNbrUser
 
             int chfrSec = Integer.parseInt(chiffreSecret);//Passe la String chiffreSecret en int
-            int chfrUser = Integer.parseInt(chiffreUser);//Passe la String chiffreUser en int
+            int chfrTest = Integer.parseInt(chiffreTest);//Passe la String chiffreUser en int
 
-            if ( chfrUser > chfrSec) {//Si réponse trop haute
+            if ( chfrTest > chfrSec) {//Si réponse trop haute
 
                 strIndication += "-";//Ajouter un -
 
-            } else if ( chfrUser < chfrSec) {//Si réponse trop bas
+            } else if ( chfrTest < chfrSec) {//Si réponse trop bas
 
                 strIndication += "+";//Ajouter un +
 
