@@ -5,7 +5,6 @@ public class ModeDefenseur extends CodeGame {
 
     private int codeSecret;//Le nombre a trouvé
     private int testCode;//Un test de code secret
-    private int codePrecedent;//Le code tester précédement
 
     //Getters & Setters
 
@@ -26,12 +25,11 @@ public class ModeDefenseur extends CodeGame {
         this.testCode = testCode;
     }
 
-    public void setCodePrecedent(int codePrecedent) {
-        this.codePrecedent = codePrecedent;
-    }
-
     //Constructeur
 
+
+    public ModeDefenseur() {
+    }
 
     public ModeDefenseur(int codeSecret, int testCode) {
         this.codeSecret = codeSecret;
@@ -48,35 +46,32 @@ public class ModeDefenseur extends CodeGame {
 
         for (int i = 0; i < strTestCode.length(); i++) {//Boucle pour traité tout les caractère de la String
 
-            String caracIndicUser = indicationUser.substring(i);
-            String chiffreTest = strTestCode.substring(i);
+            String caracIndicUser = indicationUser.substring(i,i+1);
+            String chiffreTest = strTestCode.substring(i,i+1);
 
             int chfrTest = Integer.parseInt(chiffreTest);
 
-            if (caracIndicUser == "+"){
+            if (caracIndicUser.equals("+")){
 
                 nouveauChiffre = random.nextInt(9-chfrTest)+chfrTest;
                 //nouveauChiffre = random.nextInt(chfrTest-1);
                 String strNouveauChiffre = Integer.toString(nouveauChiffre);
                 strNouveauCode += strNouveauChiffre;
 
-            } else if (caracIndicUser == "-"){
+            } else if (caracIndicUser.equals("-")){
 
                 nouveauChiffre = random.nextInt(chfrTest-1);
                 //nouveauChiffre = random.nextInt(9-chfrTest)+chfrTest;
                 String strNouveauChiffre = Integer.toString(nouveauChiffre);
                 strNouveauCode += strNouveauChiffre;
 
-            } else if (caracIndicUser == "="){
+            } else if (caracIndicUser.equals("=")){
 
                 nouveauChiffre = chfrTest;
                 String strNouveauChiffre = Integer.toString(nouveauChiffre);
                 strNouveauCode += strNouveauChiffre;
 
             }
-
-            //String strNouveauChiffre = Integer.toString(nouveauChiffre);
-            //strNouveauCode += strNouveauChiffre;
 
         }
 

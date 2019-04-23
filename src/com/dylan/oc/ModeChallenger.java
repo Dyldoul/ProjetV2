@@ -7,7 +7,30 @@ public class ModeChallenger extends CodeGame{
     private int testCode;//Un test de code secret
 
 
-    //Constructeur
+    //Getters & Setters
+
+    public int getCodeSecret() {
+        return codeSecret;
+    }
+
+    public void setCodeSecret(int codeSecret) {
+        this.codeSecret = codeSecret;
+    }
+
+    public int getTestCode() {
+        return testCode;
+    }
+
+    public void setTestCode(int testCode) {
+        this.testCode = testCode;
+    }
+
+
+    //Constructeurs
+
+
+    public ModeChallenger() {
+    }
 
     public ModeChallenger(int codeSecret, int testCode) {
         this.codeSecret = codeSecret;
@@ -28,8 +51,8 @@ public class ModeChallenger extends CodeGame{
 
         for (int i = 0; i < strCodeSecret.length(); i++){//Boucle pour traité tout les caractère de la String
 
-            String chiffreSecret = strCodeSecret.substring(i);//Prend 1 par 1 les caractère de la chaine strNbrCache
-            String chiffreTest = strTestCode.substring(i);//Prend 1 par 1 les caractère de la chaine strNbrUser
+            String chiffreSecret = strCodeSecret.substring(i,i+1);//Prend 1 par 1 les caractère de la chaine strNbrCache
+            String chiffreTest = strTestCode.substring(i,i+1);//Prend 1 par 1 les caractère de la chaine strNbrUser
 
             int chfrSec = Integer.parseInt(chiffreSecret);//Passe la String chiffreSecret en int
             int chfrTest = Integer.parseInt(chiffreTest);//Passe la String chiffreUser en int
