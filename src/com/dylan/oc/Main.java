@@ -160,6 +160,7 @@ public class Main {
                                             joueur1.setNombreJoueur(scan.nextInt());
                                             defenseur1.setCodeSecret(joueur1.getNombreJoueur());
                                             jeu.nombreAleatoire();
+                                            defenseur1.setTestCode(jeu.getNombreOrdi());
 
                                             do {
 
@@ -191,13 +192,13 @@ public class Main {
                                                 System.out.println("Match nul ! Personne n'a trouvé le nombre secret de l'autre !");
                                                 System.out.println();
 
-                                            } else if (challenger1.getTestCode() == challenger1.getCodeSecret()) {
+                                            } else if (challenger1.getIndication().equals("====")) {
 
                                                 System.out.println();
                                                 System.out.println("Félicitation ! Vous avez trouvé le code secret de votre adversaire ^^");
                                                 System.out.println();
 
-                                            } else if (defenseur1.getTestCode() == defenseur1.getCodeSecret()) {
+                                            } else if (joueur1.getIndicationJoueur().equals("====")) {
 
                                                 System.out.println();
                                                 System.out.println("Malheureusement l'ordinateur a trouvé votre code secret en premier ...");

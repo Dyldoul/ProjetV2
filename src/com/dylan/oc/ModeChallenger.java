@@ -5,6 +5,7 @@ public class ModeChallenger extends CodeGame{
 
     private int codeSecret;//Le nombre a trouvé
     private int testCode;//Un test de code secret
+    private String indication = "";//Indication de l'ordinateur
 
 
     //Getters & Setters
@@ -25,6 +26,9 @@ public class ModeChallenger extends CodeGame{
         this.testCode = testCode;
     }
 
+    public String getIndication() {
+        return indication;
+    }
 
     //Constructeurs
 
@@ -74,6 +78,7 @@ public class ModeChallenger extends CodeGame{
         }
 
         System.out.println(strIndication);//Affiche la ligne composé de + - =
+        indication = strIndication;
 
     }
 
