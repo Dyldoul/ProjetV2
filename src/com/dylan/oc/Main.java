@@ -231,7 +231,7 @@ public class Main {
 
                                             }
 
-                                            while (defenseur1.getCodeSecret() != defenseur1.getTestCode() && jeu.getNombreEssai() >= 0 || challenger1.getCodeSecret() != challenger1.getTestCode() && jeu.getNombreEssai() >= 0);
+                                            while (defenseur1.getCodeSecret() != defenseur1.getTestCode() && challenger1.getCodeSecret() != challenger1.getTestCode() && jeu.getNombreEssai() >= 0);
 
                                             if (jeu.getNombreEssai() < 0) {
 
@@ -239,13 +239,13 @@ public class Main {
                                                 System.out.println("Match nul ! Personne n'a trouvé le nombre secret de l'autre !");
                                                 System.out.println();
 
-                                            } else if (challenger1.getIndication().equals("====")) {
+                                            } else if (challenger1.getTestCode() == challenger1.getCodeSecret()) {
 
                                                 System.out.println();
                                                 System.out.println("Félicitation ! Vous avez trouvé le code secret de votre adversaire ^^");
                                                 System.out.println();
 
-                                            } else if (joueur1.getIndicationJoueur().equals("====")) {
+                                            } else if (defenseur1.getCodeSecret() == defenseur1.getTestCode()) {
 
                                                 System.out.println();
                                                 System.out.println("Malheureusement l'ordinateur a trouvé votre code secret en premier ...");
