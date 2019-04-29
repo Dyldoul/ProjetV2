@@ -43,6 +43,7 @@ public class ModeDefenseur extends CodeGame {
         String strTestCode = Integer.toString(testCode);//Transforme le nombre en String
         int nouveauChiffre;
         String strNouveauCode = "";
+        String[] tableauChiffre = new String[4];
 
         for (int i = 0; i < strTestCode.length(); i++) {//Boucle pour traité tout les caractère de la String
 
@@ -53,23 +54,24 @@ public class ModeDefenseur extends CodeGame {
 
             if (caracIndicUser.equals("+")){
 
-                nouveauChiffre = random.nextInt(9-chfrTest)+chfrTest;
-                //nouveauChiffre = random.nextInt(chfrTest-1);
+                nouveauChiffre = random.nextInt(9-chfrTest)+chfrTest;//le chiffre testé devient le minimum a rechercher
                 String strNouveauChiffre = Integer.toString(nouveauChiffre);
-                strNouveauCode += strNouveauChiffre;
+                tableauChiffre[i] = strNouveauChiffre;
+                strNouveauCode += tableauChiffre[i];
 
             } else if (caracIndicUser.equals("-")){
 
-                nouveauChiffre = random.nextInt(chfrTest-1);
-                //nouveauChiffre = random.nextInt(9-chfrTest)+chfrTest;
+                nouveauChiffre = random.nextInt(chfrTest-1);//le chiffre testé devient le maximum a rechercher
                 String strNouveauChiffre = Integer.toString(nouveauChiffre);
-                strNouveauCode += strNouveauChiffre;
+                tableauChiffre[i] = strNouveauChiffre;
+                strNouveauCode += tableauChiffre[i];
 
             } else if (caracIndicUser.equals("=")){
 
                 nouveauChiffre = chfrTest;
                 String strNouveauChiffre = Integer.toString(nouveauChiffre);
-                strNouveauCode += strNouveauChiffre;
+                tableauChiffre[i] = strNouveauChiffre;
+                strNouveauCode += tableauChiffre[i];
 
             }
 

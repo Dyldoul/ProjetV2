@@ -62,11 +62,28 @@ public class Main {
                                                 System.out.println("Veuillez entrer un nombre a " + jeu.getNombreDeChiffre() + " chiffres");
                                                 System.out.println("--------------------------------------------------");
                                                 joueur1.setNombreJoueur(scan.nextInt());
-                                                ModeChallenger challenger1 = new ModeChallenger(jeu.getNombreOrdi(),joueur1.getNombreJoueur());
-                                                challenger1.check();
-                                                jeu.setNombreEssai(jeu.getNombreEssai()-1);
-                                                System.out.println();
+                                                String strNombreJoueur = Integer.toString(joueur1.getNombreJoueur());
 
+                                                    if (strNombreJoueur.length() == jeu.getNombreDeChiffre()){//Si nombre ok
+
+                                                        ModeChallenger challenger1 = new ModeChallenger(jeu.getNombreOrdi(),joueur1.getNombreJoueur());
+                                                        challenger1.check();
+                                                        jeu.setNombreEssai(jeu.getNombreEssai()-1);
+                                                        System.out.println();
+
+                                                    } else if (strNombreJoueur.length() < jeu.getNombreDeChiffre()){//Si nombre trop petit
+
+                                                        System.out.println();
+                                                        System.out.println("Vous avez entrer un nombre trop petit");
+                                                        System.out.println();
+
+                                                    } else if (strNombreJoueur.length() > jeu.getNombreDeChiffre()) {//Si nombre trop grand
+
+                                                        System.out.println();
+                                                        System.out.println("Vous avez entrer un nombre trop grand");
+                                                        System.out.println();
+
+                                                    }
 
 
                                             } while (joueur1.getNombreJoueur() != jeu.getNombreOrdi() && jeu.getNombreEssai() >= 0);//Condition de sortie du jeu
