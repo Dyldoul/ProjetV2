@@ -1,4 +1,4 @@
-package com.dylan.oc;
+package com.dylan.oc.CodeGame;
 
 import java.util.Random;
 

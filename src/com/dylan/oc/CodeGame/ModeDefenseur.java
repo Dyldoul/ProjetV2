@@ -1,4 +1,4 @@
-package com.dylan.oc;
+package com.dylan.oc.CodeGame;
 
 public class ModeDefenseur extends CodeGame {
 
