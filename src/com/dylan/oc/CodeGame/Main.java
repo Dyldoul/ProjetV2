@@ -1,5 +1,6 @@
 package com.dylan.oc.CodeGame;
 
+
 import java.util.Scanner;
 
 public class Main {
