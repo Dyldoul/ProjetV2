@@ -1,11 +1,18 @@
 package com.dylan.oc.CodeGame;
 
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.Scanner;
 
 public class Main {
 
+    private static final Logger logger = LogManager.getLogger(Main.class);
+
     public static void main(String[] args) {
+
+        logger.info("Début du jeu");
 
         Joueur joueur1 = new Joueur("Dylan");
 
@@ -24,7 +31,7 @@ public class Main {
 
                 case 1:
                     CodeGame jeu = new CodeGame();
-                    do {//Menu du jeu1
+                    do {//Menu du jeu
 
                         System.out.println();
                         System.out.println("Que voulez-vous faire ?");
