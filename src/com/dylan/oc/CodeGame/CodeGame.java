@@ -9,6 +9,7 @@ public class CodeGame {
     private int nombreOrdi;//Nombre de l'ordinateur
     private int nombreDeChiffre = 4;//Nombre de chiffre composant le nombre secret par défault
     private int nombreEssai = 10;//Nombre d'éssais par défault
+    private boolean modeDeveloppeur = false;
 
     //Getters & Setters
 
@@ -37,6 +38,19 @@ public class CodeGame {
     }
 
     //Méthodes
+
+    /**
+     * Active le mode Développeur
+     */
+    public void modeDevActive(){
+        modeDeveloppeur = true;
+    }
+
+
+    /**
+     * Désactive le mode Developpeur
+     */
+    public void modeDevOff(){ modeDeveloppeur = false; }
 
     /**
      * Paramètre le nombre de chiffre a trouver
