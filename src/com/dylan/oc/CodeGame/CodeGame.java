@@ -80,12 +80,14 @@ public class CodeGame {
     public void nombreAleatoire(){
 
         String strNombreOrdi = "";//String pour rassembler tout les chiffre aléatoire
+        int[] tabNombreOrdi =new int[getNombreDeChiffre()];
 
         for (int i = 0; i < nombreDeChiffre; i++){//On ne dépasse pas la param utilisateur
 
-            int c = random.nextInt(9);
+            int chiffre = random.nextInt(9);
+            tabNombreOrdi[i] += chiffre;//Met le chiffre dans un tableau
 
-            strNombreOrdi += c;//Ajoute 1 par 1 les chiffre aléatoire a la String
+            strNombreOrdi += tabNombreOrdi[i];//Ajoute 1 par 1 les chiffre aléatoire a la String
 
         }
 

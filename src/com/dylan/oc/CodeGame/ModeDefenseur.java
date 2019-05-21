@@ -43,7 +43,7 @@ public class ModeDefenseur extends CodeGame {
         String strTestCode = Integer.toString(testCode);//Transforme le nombre en String
         int nouveauChiffre;
         String strNouveauCode = "";
-        String[] tableauChiffre = new String[4];
+        String[] tableauChiffre = new String[getNombreDeChiffre()];
 
         for (int i = 0; i < strTestCode.length(); i++) {//Boucle pour traité tout les caractère de la String
 
