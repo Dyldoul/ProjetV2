@@ -13,6 +13,10 @@ public class CodeGame {
 
     //Getters & Setters
 
+    public boolean isModeDeveloppeur() {
+        return modeDeveloppeur;
+    }
+
     public int getNombreOrdi() {
         return nombreOrdi;
     }

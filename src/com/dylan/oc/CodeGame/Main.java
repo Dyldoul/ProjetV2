@@ -60,6 +60,9 @@ public class Main {
 
                                         do {//Boucle tans que l'on a pas trouvé le nombre secret
 
+                                            if (jeu.isModeDeveloppeur()) {
+                                                System.out.println("Le nombre secret est : " + jeu.getNombreOrdi());
+                                            }
                                             System.out.println();
                                             System.out.println("Il vous reste "+jeu.getNombreEssai()+" essais");
                                             System.out.println("Veuillez entrer un nombre a " + jeu.getNombreDeChiffre() + " chiffres");
