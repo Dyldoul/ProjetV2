@@ -44,12 +44,14 @@ public class Main {
                             System.out.println("---------------------------------------------------");
                             choixMenu = scan.nextInt();
                             logger.debug("choixMenu = "+choixMenu);
+                            int nbrEssaie = jeu.getNombreEssai();
 
                             switch (choixMenu) {//Choix du mode
 
                                 case 1:// Lancement du jeu Challenger
 
                                     logger.info("Mode Challenger Activé");
+
 
                                     do {
                                         System.out.println("Mode Challenger Activé");
@@ -64,7 +66,7 @@ public class Main {
                                                 System.out.println("Le nombre secret est : " + jeu.getNombreOrdi());
                                             }
                                             System.out.println();
-                                            System.out.println("Il vous reste "+jeu.getNombreEssai()+" essais");
+                                            System.out.println("Il vous reste "+nbrEssaie+" essais");
                                             System.out.println("Veuillez entrer un nombre a " + jeu.getNombreDeChiffre() + " chiffres");
                                             System.out.println("--------------------------------------------------");
                                             joueur1.setNombreJoueur(scan.nextInt());
@@ -75,7 +77,7 @@ public class Main {
                                                 logger.info("Nombre de chiffre OK");
                                                 ModeChallenger challenger1 = new ModeChallenger(jeu.getNombreOrdi(),joueur1.getNombreJoueur());
                                                 challenger1.check();
-                                                jeu.setNombreEssai(jeu.getNombreEssai()-1);
+                                                nbrEssaie--;
                                                 System.out.println();
 
                                             } else if (strNombreJoueur.length() < jeu.getNombreDeChiffre()){//Si nombre trop petit
@@ -95,9 +97,9 @@ public class Main {
                                             }
 
 
-                                        } while (joueur1.getNombreJoueur() != jeu.getNombreOrdi() && jeu.getNombreEssai() >= 0);//Condition de sortie du jeu
+                                        } while (joueur1.getNombreJoueur() != jeu.getNombreOrdi() && nbrEssaie >= 0);//Condition de sortie du jeu
 
-                                        if (jeu.getNombreEssai() < 0) {
+                                        if (nbrEssaie < 0) {
 
                                             logger.info("Vous avez perdu");
                                             System.out.println();
@@ -148,7 +150,7 @@ public class Main {
                                                 do {
 
                                                     System.out.println();
-                                                    System.out.println("Il reste "+jeu.getNombreEssai()+" essais");
+                                                    System.out.println("Il reste "+nbrEssaie+" essais");
                                                     System.out.println("Votre code secret est : "+defenseur1.getCodeSecret());
                                                     System.out.println("L'ordinateur propose : "+defenseur1.getTestCode());
                                                     System.out.println("Donner lui une indication (+ - =)");
@@ -156,10 +158,10 @@ public class Main {
                                                     scan.nextLine();
                                                     joueur1.setIndicationJoueur(scan.nextLine());
                                                     defenseur1.nouveauTestCode(joueur1.getIndicationJoueur());
-                                                    jeu.setNombreEssai(jeu.getNombreEssai()-1);
+                                                    nbrEssaie--;
 
 
-                                                } while (defenseur1.getCodeSecret() != defenseur1.getTestCode() && jeu.getNombreEssai() >= 0);
+                                                } while (defenseur1.getCodeSecret() != defenseur1.getTestCode() && nbrEssaie >= 0);
 
                                             } else if (strNombreJoueur.length() < jeu.getNombreDeChiffre()){//Si nombre trop petit
 
@@ -181,7 +183,7 @@ public class Main {
                                         } while (strNombreJoueur.length() != jeu.getNombreDeChiffre());
 
 
-                                        if (jeu.getNombreEssai() < 0) {
+                                        if (nbrEssaie < 0) {
 
                                             logger.info("Vous avez gagner");
                                             System.out.println();
@@ -232,8 +234,11 @@ public class Main {
 
                                         do {
 
-                                            System.out.println("Il reste " + jeu.getNombreEssai() + " essais");
+                                            System.out.println("Il reste " + nbrEssaie + " essais");
                                             System.out.println("Trouver le code secret de votre adversaire !");
+                                            if (jeu.isModeDeveloppeur()) {
+                                                System.out.println("Le nombre secret est : " + jeu.getNombreOrdi());
+                                            }
                                             System.out.println("Veuillez entrer un nombre a " + jeu.getNombreDeChiffre() + " chiffres");
                                             System.out.println("--------------------------------------------------");
                                             joueur1.setNombreJoueur(scan.nextInt());
@@ -248,14 +253,14 @@ public class Main {
                                             scan.nextLine();
                                             joueur1.setIndicationJoueur(scan.nextLine());
                                             defenseur1.nouveauTestCode(joueur1.getIndicationJoueur());
-                                            jeu.setNombreEssai(jeu.getNombreEssai() - 1);
+                                            nbrEssaie--;
                                             System.out.println();
 
                                         }
 
-                                        while (defenseur1.getCodeSecret() != defenseur1.getTestCode() && challenger1.getCodeSecret() != challenger1.getTestCode() && jeu.getNombreEssai() >= 0);
+                                        while (defenseur1.getCodeSecret() != defenseur1.getTestCode() && challenger1.getCodeSecret() != challenger1.getTestCode() && nbrEssaie >= 0);
 
-                                        if (jeu.getNombreEssai() < 0) {
+                                        if (nbrEssaie < 0) {
 
                                             logger.info("Match Nul");
                                             System.out.println();
