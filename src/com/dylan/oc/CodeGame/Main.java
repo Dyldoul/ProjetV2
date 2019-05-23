@@ -320,6 +320,7 @@ public class Main {
                                     case 1 :
 
                                         logger.info("Paramètre nombre de chiffre");
+                                        System.out.println();
                                         int nombreChiffre;
                                         System.out.println("Combien de chiffre voulez vous trouver ?");
                                         nombreChiffre = scan.nextInt();
@@ -332,6 +333,7 @@ public class Main {
                                     case 2 :
 
                                         logger.info("Paramètre nombre d'essais");
+                                        System.out.println();
                                         int nombreEssais;
                                         System.out.println("Combien d'essais voudriez vous ?");
                                         nombreEssais = scan.nextInt();
@@ -344,6 +346,13 @@ public class Main {
                                     case 3 :
 
                                         logger.info("Parametre Mode Developpeur");
+                                        System.out.println();
+                                        if (jeu.isModeDeveloppeur()) {
+                                            System.out.println("Le mode développeur est actif !");
+                                        } else {
+                                            System.out.println("Le mode développeur est inactif !");
+                                        }
+                                        System.out.println();
                                         System.out.println("Voulez-vous activé le mode développeur ? o/n");
                                         scan.nextLine();
                                         String str = scan.nextLine();
@@ -352,10 +361,12 @@ public class Main {
                                         if (modeDev == 'o'){
 
                                             jeu.modeDevActive();
+                                            System.out.println("Le mode développeur est maintenant activé !");
 
                                         } else if (modeDev == 'n'){
 
                                             jeu.modeDevOff();
+                                            System.out.println("Le mode développeur est maintenant desactivé !");
 
                                         }
                                  }

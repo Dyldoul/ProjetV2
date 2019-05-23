@@ -54,7 +54,7 @@ public class ModeDefenseur extends CodeGame {
 
             if (caracIndicUser.equals("+")){
 
-                nouveauChiffre = random.nextInt(9-chfrTest+1)+chfrTest;//le chiffre testé devient le minimum a rechercher
+                nouveauChiffre = random.nextInt(9-chfrTest)+chfrTest;//le chiffre testé devient le minimum a rechercher
                 String strNouveauChiffre = Integer.toString(nouveauChiffre);
                 tableauChiffre[i] = strNouveauChiffre;
                 strNouveauCode += tableauChiffre[i];
