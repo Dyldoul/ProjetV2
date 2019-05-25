@@ -1,8 +1,8 @@
 package com.dylan.oc.CodeGame;
 
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.util.Scanner;
 
@@ -69,7 +69,7 @@ public class Main {
                                             System.out.println("Il vous reste "+nbrEssaie+" essais");
                                             System.out.println("Veuillez entrer un nombre a " + jeu.getNombreDeChiffre() + " chiffres");
                                             System.out.println("--------------------------------------------------");
-                                            joueur1.setNombreJoueur(scan.nextInt());
+                                            joueur1.checkNombreJoueur(scan.nextInt());
                                             String strNombreJoueur = Integer.toString(joueur1.getNombreJoueur());//Pour le controle de la saisie
 
                                             if (strNombreJoueur.length() == jeu.getNombreDeChiffre()){//Si nombre ok
@@ -104,6 +104,7 @@ public class Main {
                                             logger.info("Vous avez perdu");
                                             System.out.println();
                                             System.out.println("Vous avez perdu ! Vous n'avez pas trouvé le code secret a temps !");
+                                            System.out.println("Le code secret étais : "+jeu.getNombreOrdi());
                                             System.out.println();
 
                                         } else {
@@ -141,7 +142,7 @@ public class Main {
 
                                             System.out.println("Veuillez entrer votre code secret à "+jeu.getNombreDeChiffre()+" chiffres :");
                                             System.out.println("--------------------------------------------------");
-                                            joueur1.setNombreJoueur(scan.nextInt());
+                                            joueur1.checkNombreJoueur(scan.nextInt());
                                             strNombreJoueur = Integer.toString(joueur1.getNombreJoueur());
                                             ModeDefenseur defenseur1 = new ModeDefenseur(joueur1.getNombreJoueur(),jeu.getNombreOrdi());
 
@@ -227,7 +228,7 @@ public class Main {
                                         challenger1.setCodeSecret(jeu.getNombreOrdi());
                                         System.out.println("Veuillez entrer votre code secret à " + jeu.getNombreDeChiffre() + " chiffres :");
                                         System.out.println("--------------------------------------------------");
-                                        joueur1.setNombreJoueur(scan.nextInt());
+                                        joueur1.checkNombreJoueur(scan.nextInt());
                                         defenseur1.setCodeSecret(joueur1.getNombreJoueur());
                                         jeu.nombreAleatoire();
                                         defenseur1.setTestCode(jeu.getNombreOrdi());
@@ -241,7 +242,7 @@ public class Main {
                                             }
                                             System.out.println("Veuillez entrer un nombre a " + jeu.getNombreDeChiffre() + " chiffres");
                                             System.out.println("--------------------------------------------------");
-                                            joueur1.setNombreJoueur(scan.nextInt());
+                                            joueur1.checkNombreJoueur(scan.nextInt());
                                             challenger1.setTestCode(joueur1.getNombreJoueur());
                                             challenger1.check();
                                             System.out.println();
