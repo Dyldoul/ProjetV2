@@ -72,11 +72,8 @@ public class ModeDefenseur extends CodeGame {
                 String strNouveauChiffre = Integer.toString(nouveauChiffre);
                 tableauChiffre[i] = strNouveauChiffre;
                 strNouveauCode += tableauChiffre[i];
-
             }
-
         }
-
         testCode = Integer.parseInt(strNouveauCode);
 
     }

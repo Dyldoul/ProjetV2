@@ -2,7 +2,6 @@ package com.dylan.oc.CodeGame;
 
 public class Joueur{
 
-    private String nom;
     private int nombreJoueur;
     private String indicationJoueur;
 
@@ -25,9 +24,7 @@ public class Joueur{
 
     //Constructeurs
 
-    public Joueur(String nom) {
-
-        this.nom = nom;
+    public Joueur() {
 
     }
 
@@ -39,19 +36,18 @@ public class Joueur{
      */
     public void checkNombreJoueur(int nombreSaisie){
 
-        String strNombreSaisie = Integer.toString(nombreSaisie);
-        int[] tabNombreSaisie = new int[100];
+        String strNombreSaisie = Integer.toString(nombreSaisie); //Le nombre saisie devient une String
+        String[] tabNombreSaisie = new String[100];
         String strNombreJoueur ="";
 
         for (int i = 0; i < strNombreSaisie.length(); i++){
 
             String strUnNombreSaisie = strNombreSaisie.substring(i,i+1);
-            int unNombreSaisie = Integer.parseInt(strUnNombreSaisie);
-            tabNombreSaisie[i] = unNombreSaisie;
+            tabNombreSaisie[i] = strUnNombreSaisie;
             strNombreJoueur += tabNombreSaisie[i];
         }
 
-        nombreJoueur = Integer.parseInt(strNombreJoueur);
+        nombreJoueur = Integer.parseInt(strNombreJoueur);//Le nombre saisie devient le nombre joueur
 
     }
 

@@ -14,7 +14,7 @@ public class Main {
 
         logger.info("Début du jeu");
 
-        Joueur joueur1 = new Joueur("Dylan");
+        Joueur joueur1 = new Joueur();
 
         Scanner scan = new Scanner(System.in);
         int choixMenu; //Variable de navigation dans le menu
