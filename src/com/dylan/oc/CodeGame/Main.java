@@ -3,6 +3,7 @@ package com.dylan.oc.CodeGame;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.apache.log4j.xml.DOMConfigurator;
 
 import java.util.Scanner;
 
@@ -11,6 +12,8 @@ public class Main {
     private static final Logger logger = LogManager.getLogger(Main.class);
 
     public static void main(String[] args) {
+
+        DOMConfigurator.configure("src/com/dylan/oc/Ressource/log4j2.xml");
 
         logger.info("Début du jeu");
 
@@ -53,7 +56,7 @@ public class Main {
                                     logger.info("Mode Challenger Activé");
 
 
-                                    do {
+                                    do {//Boucle pour recommencer le jeu
                                         System.out.println("Mode Challenger Activé");
                                         jeu.nombreAleatoire();//L'ordinateur choisi un nombre aléatoire
                                         System.out.println();
@@ -115,13 +118,14 @@ public class Main {
                                             System.out.println();
                                         }
                                         System.out.println();
-                                        System.out.println("Voulez-vous recommencer ? O/N");
+                                        System.out.println("Voulez-vous recommencer ? o/n");
                                         scan.nextLine();
                                         String str = scan.nextLine();
                                         exit = str.charAt(0);
                                         logger.info("Recommencer ou non");
 
-                                    } while (exit != 'N' && exit == 'O'); //Recommencer ou non le jeu
+                                    } while (exit != 'n' && exit == 'o'); //Recommencer ou non le jeu
+
 
                                     System.out.println();
 
@@ -131,14 +135,14 @@ public class Main {
 
                                     logger.info("Mode Défenseur Activé");
 
-                                    do {
+                                    do {//Boucle pour recommencer le jeu
 
                                         System.out.println("Mode Défenseur activé");
                                         jeu.nombreAleatoire();
                                         System.out.println();
                                         String strNombreJoueur;
 
-                                        do {
+                                        do {//Boucle de vérifiaction de la taille du code secret de l'utilisateur
 
                                             System.out.println("Veuillez entrer votre code secret à "+jeu.getNombreDeChiffre()+" chiffres :");
                                             System.out.println("--------------------------------------------------");
@@ -148,7 +152,7 @@ public class Main {
 
                                             if (strNombreJoueur.length() == jeu.getNombreDeChiffre()){
 
-                                                do {
+                                                do {//Boucle tans que l'ordinateur n'a pas trouvé le code secret de l'utilisateur
 
                                                     System.out.println();
                                                     System.out.println("Il reste "+nbrEssaie+" essais");
@@ -201,13 +205,12 @@ public class Main {
                                         }
 
                                         System.out.println();
-                                        System.out.println("Voulez-vous recommencer ? O/N");
+                                        System.out.println("Voulez-vous recommencer ? o/n");
                                         scan.nextLine();
                                         String str = scan.nextLine();
                                         exit = str.charAt(0);
-                                        logger.info("Recommencer ou non");
 
-                                    } while (exit != 'N' && exit == 'O'); //Recommencer ou non le jeu
+                                    } while (exit != 'n' && exit == 'n'); //Recommencer ou non le jeu
 
                                     System.out.println();
 
@@ -217,7 +220,7 @@ public class Main {
 
                                     logger.info("Mode Duel Activé");
 
-                                    do {
+                                    do {//Boucle pour recommencer le jeu
                                         System.out.println("Mode Duel activé");
                                         System.out.println();
                                         ModeDefenseur defenseur1 = new ModeDefenseur();
@@ -233,7 +236,7 @@ public class Main {
                                         jeu.nombreAleatoire();
                                         defenseur1.setTestCode(jeu.getNombreOrdi());
 
-                                        do {
+                                        do { //Boucle tans que l'ordi ou l'utilisateur n'a pas trouver la solution
 
                                             System.out.println("Il reste " + nbrEssaie + " essais");
                                             System.out.println("Trouver le code secret de votre adversaire !");
@@ -328,6 +331,7 @@ public class Main {
                                         jeu.paramNbrChiffre(nombreChiffre);
                                         System.out.println();
                                         System.out.println("Vous allez chercher un nombre a "+jeu.getNombreDeChiffre()+" chiffre");
+                                        logger.debug("nombreChiffre = "+nombreChiffre);
                                         System.out.println();
                                         break;
 
@@ -341,6 +345,7 @@ public class Main {
                                         jeu.paramNbrEssais(nombreEssais);
                                         System.out.println();
                                         System.out.println("Vous avez maintenant "+jeu.getNombreEssai()+" essais pour trouver le code secret !");
+                                        logger.debug("nombreEssais ="+nombreEssais);
                                         System.out.println();
                                         break;
 

@@ -1,0 +1,14 @@
+2019-05-28 08:57:10 INFO  Main:18 - Début du jeu
+2019-05-28 08:57:10 INFO  Main:30 - Menu du jeu
+2019-05-28 10:31:17 INFO  Main:18 - Début du jeu
+2019-05-28 10:31:17 INFO  Main:30 - Menu du jeu
+2019-05-28 10:31:19 DEBUG Main:37 - choixMenu = 1
+2019-05-28 10:31:20 DEBUG Main:49 - choixMenu = 2
+2019-05-28 10:31:20 INFO  Main:135 - Mode Défenseur Activé
+2019-05-28 10:33:43 INFO  Main:18 - Début du jeu
+2019-05-28 10:33:43 INFO  Main:30 - Menu du jeu
+2019-05-28 10:33:45 DEBUG Main:37 - choixMenu = 1
+2019-05-28 10:33:47 DEBUG Main:49 - choixMenu = 3
+2019-05-28 10:33:47 INFO  Main:221 - Mode Duel Activé
+2019-05-28 10:35:24 INFO  Main:276 - Vous avez gagner
+2019-05-28 10:35:30 INFO  Main:295 - Recommencer ou non
