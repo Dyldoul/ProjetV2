@@ -12,3 +12,84 @@
 2019-05-28 10:33:47 INFO  Main:221 - Mode Duel Activé
 2019-05-28 10:35:24 INFO  Main:276 - Vous avez gagner
 2019-05-28 10:35:30 INFO  Main:295 - Recommencer ou non
+2019-05-28 10:57:01 INFO  Main:18 - Début du jeu
+2019-05-28 10:57:01 INFO  Main:30 - Menu du jeu
+2019-05-28 10:57:03 DEBUG Main:37 - choixMenu = 1
+2019-05-28 10:57:04 DEBUG Main:49 - choixMenu = 3
+2019-05-28 10:57:04 INFO  Main:221 - Mode Duel Activé
+2019-05-28 10:58:08 INFO  Main:18 - Début du jeu
+2019-05-28 10:58:08 INFO  Main:30 - Menu du jeu
+2019-05-28 10:58:10 DEBUG Main:37 - choixMenu = 1
+2019-05-28 10:58:11 DEBUG Main:49 - choixMenu = 3
+2019-05-28 10:58:11 INFO  Main:221 - Mode Duel Activé
+2019-05-28 10:59:21 INFO  Main:277 - Vous avez gagner
+2019-05-28 10:59:25 INFO  Main:297 - Recommencer ou non
+2019-05-28 11:02:52 INFO  Main:18 - Début du jeu
+2019-05-28 11:02:52 INFO  Main:30 - Menu du jeu
+2019-05-28 11:02:53 DEBUG Main:37 - choixMenu = 1
+2019-05-28 11:02:55 DEBUG Main:49 - choixMenu = 3
+2019-05-28 11:02:55 INFO  Main:223 - Mode Duel Activé
+2019-05-28 11:03:44 INFO  Main:278 - Vous avez gagner
+2019-05-28 11:03:48 INFO  Main:298 - Recommencer ou non
+2019-05-28 11:03:48 INFO  Main:312 - Parametre du jeu
+2019-05-28 11:03:55 DEBUG Main:323 - choixMenu = 4
+2019-05-28 11:03:55 INFO  Main:30 - Menu du jeu
+2019-05-28 11:08:13 INFO  Main:18 - Début du jeu
+2019-05-28 11:08:13 INFO  Main:30 - Menu du jeu
+2019-05-28 11:08:24 INFO  Main:18 - Début du jeu
+2019-05-28 11:08:24 INFO  Main:30 - Menu du jeu
+2019-05-28 11:08:28 DEBUG Main:37 - choixMenu = 1
+2019-05-28 11:08:29 DEBUG Main:49 - choixMenu = 3
+2019-05-28 11:08:29 INFO  Main:223 - Mode Duel Activé
+2019-05-28 11:08:58 INFO  Main:277 - Vous avez gagner
+2019-05-28 11:09:02 INFO  Main:297 - Recommencer ou non
+2019-05-28 11:12:48 INFO  Main:18 - Début du jeu
+2019-05-28 11:12:48 INFO  Main:30 - Menu du jeu
+2019-05-28 11:16:38 DEBUG Main:37 - choixMenu = 1
+2019-05-28 11:16:40 DEBUG Main:49 - choixMenu = 3
+2019-05-28 11:16:40 INFO  Main:225 - Mode Duel Activé
+2019-05-28 11:17:17 INFO  Main:18 - Début du jeu
+2019-05-28 11:17:17 INFO  Main:30 - Menu du jeu
+2019-05-28 11:17:20 DEBUG Main:37 - choixMenu = 1
+2019-05-28 11:17:22 DEBUG Main:49 - choixMenu = 3
+2019-05-28 11:17:22 INFO  Main:225 - Mode Duel Activé
+2019-05-28 11:18:31 INFO  Main:281 - Vous avez gagner
+2019-05-28 11:18:35 INFO  Main:301 - Recommencer ou non
+2019-05-28 11:20:12 INFO  Main:18 - Début du jeu
+2019-05-28 11:20:12 INFO  Main:30 - Menu du jeu
+2019-05-28 11:20:15 DEBUG Main:37 - choixMenu = 5
+2019-05-28 11:20:18 INFO  Main:18 - Début du jeu
+2019-05-28 11:20:18 INFO  Main:30 - Menu du jeu
+2019-05-28 11:20:20 DEBUG Main:37 - choixMenu = 1
+2019-05-28 11:20:21 DEBUG Main:49 - choixMenu = 3
+2019-05-28 11:20:21 INFO  Main:225 - Mode Duel Activé
+2019-05-28 11:21:39 INFO  Main:281 - Vous avez gagner
+2019-05-28 11:21:44 INFO  Main:301 - Recommencer ou non
+2019-05-28 11:21:44 INFO  Main:30 - Menu du jeu
+2019-05-28 13:18:42 INFO  Main:18 - Début du jeu
+2019-05-28 13:18:42 INFO  Main:30 - Menu du jeu
+2019-05-28 13:18:44 DEBUG Main:37 - choixMenu = 1
+2019-05-28 13:18:46 DEBUG Main:49 - choixMenu = 1
+2019-05-28 13:18:46 INFO  Main:56 - Mode Challenger Activé
+2019-05-28 13:18:48 INFO  Main:81 - Nombre de chiffre OK
+2019-05-28 13:18:59 INFO  Main:81 - Nombre de chiffre OK
+2019-05-28 13:19:06 INFO  Main:81 - Nombre de chiffre OK
+2019-05-28 13:19:11 INFO  Main:81 - Nombre de chiffre OK
+2019-05-28 13:19:11 INFO  Main:117 - Vous avez gagner
+2019-05-28 13:19:14 INFO  Main:30 - Menu du jeu
+2019-05-28 13:20:07 INFO  Main:18 - Début du jeu
+2019-05-28 13:20:07 INFO  Main:30 - Menu du jeu
+2019-05-28 13:20:08 DEBUG Main:37 - choixMenu = 1
+2019-05-28 13:20:09 DEBUG Main:49 - choixMenu = 1
+2019-05-28 13:20:09 INFO  Main:56 - Mode Challenger Activé
+2019-05-28 13:20:11 INFO  Main:81 - Nombre de chiffre OK
+2019-05-28 13:20:18 INFO  Main:81 - Nombre de chiffre OK
+2019-05-28 13:20:23 INFO  Main:81 - Nombre de chiffre OK
+2019-05-28 13:20:23 INFO  Main:117 - Vous avez gagner
+2019-05-28 13:20:32 INFO  Main:81 - Nombre de chiffre OK
+2019-05-28 13:20:39 INFO  Main:81 - Nombre de chiffre OK
+2019-05-28 13:20:49 INFO  Main:81 - Nombre de chiffre OK
+2019-05-28 13:20:56 INFO  Main:81 - Nombre de chiffre OK
+2019-05-28 13:20:56 INFO  Main:117 - Vous avez gagner
+2019-05-28 13:20:58 INFO  Main:30 - Menu du jeu
+2019-05-28 13:21:00 DEBUG Main:37 - choixMenu = 5

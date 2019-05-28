@@ -22,7 +22,7 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         int choixMenu; //Variable de navigation dans le menu
         char modeDev;//Variable pour acitvé le mode développeur
-        char exit; // Variable pour quitter un jeu ou non a la fin
+        int exit; // Variable pour quitter un jeu ou non a la fin
         CodeGame jeu = new CodeGame();
 
             do {//Menu du jeu
@@ -31,7 +31,7 @@ public class Main {
                 System.out.println("Que voulez-vous faire ?");
                 System.out.println("1 - Jouer");
                 System.out.println("2 - Paramétrer");
-                System.out.println("3 - Quitter");
+                System.out.println("5 - Quitter");
                 System.out.println("---------------------------------------------------");
                 choixMenu = scan.nextInt();
                 logger.debug("choixMenu = "+choixMenu);
@@ -47,7 +47,7 @@ public class Main {
                             System.out.println("---------------------------------------------------");
                             choixMenu = scan.nextInt();
                             logger.debug("choixMenu = "+choixMenu);
-                            int nbrEssaie = jeu.getNombreEssai();
+                            int nbrEssaie;//Nombre d'essais possible
 
                             switch (choixMenu) {//Choix du mode
 
@@ -57,6 +57,7 @@ public class Main {
 
 
                                     do {//Boucle pour recommencer le jeu
+                                        nbrEssaie = jeu.getNombreEssai();
                                         System.out.println("Mode Challenger Activé");
                                         jeu.nombreAleatoire();//L'ordinateur choisi un nombre aléatoire
                                         System.out.println();
@@ -69,21 +70,21 @@ public class Main {
                                                 System.out.println("Le nombre secret est : " + jeu.getNombreOrdi());
                                             }
                                             System.out.println();
-                                            System.out.println("Il vous reste "+nbrEssaie+" essais");
+                                            System.out.println("Il vous reste " + nbrEssaie + " essais");
                                             System.out.println("Veuillez entrer un nombre a " + jeu.getNombreDeChiffre() + " chiffres");
                                             System.out.println("--------------------------------------------------");
                                             joueur1.checkNombreJoueur(scan.nextInt());
                                             String strNombreJoueur = Integer.toString(joueur1.getNombreJoueur());//Pour le controle de la saisie
 
-                                            if (strNombreJoueur.length() == jeu.getNombreDeChiffre()){//Si nombre ok
+                                            if (strNombreJoueur.length() == jeu.getNombreDeChiffre()) {//Si nombre ok
 
                                                 logger.info("Nombre de chiffre OK");
-                                                ModeChallenger challenger1 = new ModeChallenger(jeu.getNombreOrdi(),joueur1.getNombreJoueur());
+                                                ModeChallenger challenger1 = new ModeChallenger(jeu.getNombreOrdi(), joueur1.getNombreJoueur());
                                                 challenger1.check();
                                                 nbrEssaie--;
                                                 System.out.println();
 
-                                            } else if (strNombreJoueur.length() < jeu.getNombreDeChiffre()){//Si nombre trop petit
+                                            } else if (strNombreJoueur.length() < jeu.getNombreDeChiffre()) {//Si nombre trop petit
 
                                                 logger.debug("Nombre de chiffre donnée trop petit");
                                                 System.out.println();
@@ -100,14 +101,15 @@ public class Main {
                                             }
 
 
-                                        } while (joueur1.getNombreJoueur() != jeu.getNombreOrdi() && nbrEssaie >= 0);//Condition de sortie du jeu
+                                        }
+                                        while (joueur1.getNombreJoueur() != jeu.getNombreOrdi() && nbrEssaie >= 0);//Condition de sortie du jeu
 
                                         if (nbrEssaie < 0) {
 
                                             logger.info("Vous avez perdu");
                                             System.out.println();
                                             System.out.println("Vous avez perdu ! Vous n'avez pas trouvé le code secret a temps !");
-                                            System.out.println("Le code secret étais : "+jeu.getNombreOrdi());
+                                            System.out.println("Le code secret étais : " + jeu.getNombreOrdi());
                                             System.out.println();
 
                                         } else {
@@ -118,13 +120,10 @@ public class Main {
                                             System.out.println();
                                         }
                                         System.out.println();
-                                        System.out.println("Voulez-vous recommencer ? o/n");
-                                        scan.nextLine();
-                                        String str = scan.nextLine();
-                                        exit = str.charAt(0);
-                                        logger.info("Recommencer ou non");
+                                        System.out.println("Voulez-vous recommencer ? 1-Oui / 2-Non");
+                                        exit = scan.nextInt();
 
-                                    } while (exit != 'n' && exit == 'o'); //Recommencer ou non le jeu
+                                    } while (exit != 2 && exit == 1); //Recommencer ou non le jeu
 
 
                                     System.out.println();
@@ -137,6 +136,7 @@ public class Main {
 
                                     do {//Boucle pour recommencer le jeu
 
+                                        nbrEssaie = jeu.getNombreEssai();
                                         System.out.println("Mode Défenseur activé");
                                         jeu.nombreAleatoire();
                                         System.out.println();
@@ -144,20 +144,20 @@ public class Main {
 
                                         do {//Boucle de vérifiaction de la taille du code secret de l'utilisateur
 
-                                            System.out.println("Veuillez entrer votre code secret à "+jeu.getNombreDeChiffre()+" chiffres :");
+                                            System.out.println("Veuillez entrer votre code secret à " + jeu.getNombreDeChiffre() + " chiffres :");
                                             System.out.println("--------------------------------------------------");
                                             joueur1.checkNombreJoueur(scan.nextInt());
                                             strNombreJoueur = Integer.toString(joueur1.getNombreJoueur());
-                                            ModeDefenseur defenseur1 = new ModeDefenseur(joueur1.getNombreJoueur(),jeu.getNombreOrdi());
+                                            ModeDefenseur defenseur1 = new ModeDefenseur(joueur1.getNombreJoueur(), jeu.getNombreOrdi());
 
-                                            if (strNombreJoueur.length() == jeu.getNombreDeChiffre()){
+                                            if (strNombreJoueur.length() == jeu.getNombreDeChiffre()) {
 
                                                 do {//Boucle tans que l'ordinateur n'a pas trouvé le code secret de l'utilisateur
 
                                                     System.out.println();
-                                                    System.out.println("Il reste "+nbrEssaie+" essais");
-                                                    System.out.println("Votre code secret est : "+defenseur1.getCodeSecret());
-                                                    System.out.println("L'ordinateur propose : "+defenseur1.getTestCode());
+                                                    System.out.println("Il reste " + nbrEssaie + " essais");
+                                                    System.out.println("Votre code secret est : " + defenseur1.getCodeSecret());
+                                                    System.out.println("L'ordinateur propose : " + defenseur1.getTestCode());
                                                     System.out.println("Donner lui une indication (+ - =)");
                                                     System.out.println("--------------------------------------------------");
                                                     scan.nextLine();
@@ -166,9 +166,10 @@ public class Main {
                                                     nbrEssaie--;
 
 
-                                                } while (defenseur1.getCodeSecret() != defenseur1.getTestCode() && nbrEssaie >= 0);
+                                                }
+                                                while (defenseur1.getCodeSecret() != defenseur1.getTestCode() && nbrEssaie >= 0);
 
-                                            } else if (strNombreJoueur.length() < jeu.getNombreDeChiffre()){//Si nombre trop petit
+                                            } else if (strNombreJoueur.length() < jeu.getNombreDeChiffre()) {//Si nombre trop petit
 
                                                 logger.debug("Nombre de chiffre donnée trop petit");
                                                 System.out.println();
@@ -205,22 +206,22 @@ public class Main {
                                         }
 
                                         System.out.println();
-                                        System.out.println("Voulez-vous recommencer ? o/n");
-                                        scan.nextLine();
-                                        String str = scan.nextLine();
-                                        exit = str.charAt(0);
+                                        System.out.println("Voulez-vous recommencer ? 1-Oui / 2-Non");
+                                        exit = scan.nextInt();
 
-                                    } while (exit != 'n' && exit == 'n'); //Recommencer ou non le jeu
+                                    } while (exit != 2 && exit == 1); //Recommencer ou non le jeu
 
                                     System.out.println();
 
                                     break;
 
-                                case 3://Lancement du mode Duel
+                                case 3: //Lancement du mode Duel
 
                                     logger.info("Mode Duel Activé");
 
                                     do {//Boucle pour recommencer le jeu
+
+                                        nbrEssaie = jeu.getNombreEssai();
                                         System.out.println("Mode Duel activé");
                                         System.out.println();
                                         ModeDefenseur defenseur1 = new ModeDefenseur();
@@ -238,6 +239,7 @@ public class Main {
 
                                         do { //Boucle tans que l'ordi ou l'utilisateur n'a pas trouver la solution
 
+                                            System.out.println();
                                             System.out.println("Il reste " + nbrEssaie + " essais");
                                             System.out.println("Trouver le code secret de votre adversaire !");
                                             if (jeu.isModeDeveloppeur()) {
@@ -260,9 +262,7 @@ public class Main {
                                             nbrEssaie--;
                                             System.out.println();
 
-                                        }
-
-                                        while (defenseur1.getCodeSecret() != defenseur1.getTestCode() && challenger1.getCodeSecret() != challenger1.getTestCode() && nbrEssaie >= 0);
+                                        } while (defenseur1.getCodeSecret() != defenseur1.getTestCode() && challenger1.getCodeSecret() != challenger1.getTestCode() && nbrEssaie >= 0);
 
                                         if (nbrEssaie < 0) {
 
@@ -282,27 +282,26 @@ public class Main {
 
                                             logger.info("Vous avez perdu");
                                             System.out.println();
+                                            System.out.println("L'ordinateur propose : " + defenseur1.getTestCode());
                                             System.out.println("Malheureusement l'ordinateur a trouvé votre code secret en premier ...");
                                             System.out.println();
 
                                         }
 
                                         System.out.println();
-                                        System.out.println("Voulez-vous recommencer ? O/N");
-                                        scan.nextLine();
-                                        String str = scan.nextLine();
-                                        exit = str.charAt(0);
-                                        logger.info("Recommencer ou non");
+                                        System.out.println("Voulez-vous recommencer ? 1-Oui / 2-Non");
+                                        exit = scan.nextInt();
 
-                                    } while (exit != 'N' && exit == 'O'); //Recommencer ou non le jeu
+                                    } while (exit != 2 && exit == 1); //Recommencer ou non le jeu
 
                                     System.out.println();
 
-                                    break;
+                                break;
+
 
                             }//Fin du switch du mode
 
-                            break;
+                        break;
 
                         case 2: //Paramétrer le jeu
 
@@ -385,8 +384,9 @@ public class Main {
 
                     }//Fin du switch du menu jeu
 
-            } while (choixMenu != 3);//Sortir du menu du jeu
+            } while (choixMenu != 5);//Sortir du menu du jeu
 
+        System.out.println();
         System.out.println("Au revoir ^^");
 
     }//Fin du switch du menu de départ
