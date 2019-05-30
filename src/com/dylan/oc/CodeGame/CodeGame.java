@@ -1,16 +1,22 @@
 package com.dylan.oc.CodeGame;
 
 import java.util.Random;
+import java.util.ResourceBundle;
 
 public class CodeGame {
 
     Random random = new Random();//Création de la variable aléatoire
 
-    private int nombreOrdi;//Nombre de l'ordinateur
-    private int nombreDeChiffre = 4;//Nombre de chiffre composant le nombre secret par défault
-    private int nombreEssai = 10;//Nombre d'éssais par défault
-    private boolean modeDeveloppeur = false;//Activation mode développeur
+    ResourceBundle chargement = ResourceBundle.getBundle("com.dylan.oc.Ressource.Config.config");
 
+    private int nombreOrdi;//Nombre de l'ordinateur
+    private String strNombreDeChiffre = chargement.getString("nombreDeChiffre");//Récupère le Nombre de chiffre composant le nombre secret par default dans fichier config
+    private String strNombreEssai = chargement.getString("nombreEssai");;//Récupère le Nombre d'éssais par défault dans fichier config
+    private String strModeDeveloppeur = chargement.getString("developpeur");;//Récupère l'Activation du mode développeur dans fichier config
+
+    private int nombreDeChiffre = Integer.parseInt(strNombreDeChiffre);//Transforme la string récupérer du fichier config en int
+    private int nombreEssai = Integer.parseInt(strNombreEssai);//Transforme la string récupérer du fichier config en int
+    private boolean modeDeveloppeur = Boolean.getBoolean(strModeDeveloppeur);//Transforme la string récupérer du fichier config en boolean
     //Getters & Setters
 
     public boolean isModeDeveloppeur() {

@@ -93,3 +93,37 @@
 2019-05-28 13:20:56 INFO  Main:117 - Vous avez gagner
 2019-05-28 13:20:58 INFO  Main:30 - Menu du jeu
 2019-05-28 13:21:00 DEBUG Main:37 - choixMenu = 5
+2019-05-30 10:07:03 INFO  Main:18 - Début du jeu
+2019-05-30 10:08:03 INFO  Main:18 - Début du jeu
+2019-05-30 10:08:39 INFO  Main:18 - Début du jeu
+2019-05-30 10:08:53 INFO  Main:18 - Début du jeu
+2019-05-30 10:09:45 INFO  Main:18 - Début du jeu
+2019-05-30 10:09:45 INFO  Main:30 - Menu du jeu
+2019-05-30 10:09:50 DEBUG Main:37 - choixMenu = 1
+2019-05-30 10:11:24 DEBUG Main:49 - choixMenu = 1
+2019-05-30 10:11:24 INFO  Main:56 - Mode Challenger Activé
+2019-05-30 10:11:32 INFO  Main:81 - Nombre de chiffre OK
+2019-05-30 10:11:37 INFO  Main:81 - Nombre de chiffre OK
+2019-05-30 10:11:45 INFO  Main:81 - Nombre de chiffre OK
+2019-05-30 10:11:50 INFO  Main:81 - Nombre de chiffre OK
+2019-05-30 10:11:50 INFO  Main:117 - Vous avez gagner
+2019-05-30 10:11:53 INFO  Main:30 - Menu du jeu
+2019-05-30 10:11:54 DEBUG Main:37 - choixMenu = 2
+2019-05-30 10:11:54 INFO  Main:308 - Parametre du jeu
+2019-05-30 10:11:57 DEBUG Main:319 - choixMenu = 1
+2019-05-30 10:11:57 INFO  Main:325 - Paramètre nombre de chiffre
+2019-05-30 10:11:59 DEBUG Main:333 - nombreChiffre = 2
+2019-05-30 10:12:04 DEBUG Main:319 - choixMenu = 2
+2019-05-30 10:12:04 INFO  Main:339 - Paramètre nombre d'essais
+2019-05-30 10:12:05 DEBUG Main:347 - nombreEssais =5
+2019-05-30 10:12:08 DEBUG Main:319 - choixMenu = 4
+2019-05-30 10:12:08 INFO  Main:30 - Menu du jeu
+2019-05-30 10:12:17 DEBUG Main:37 - choixMenu = 1
+2019-05-30 10:12:19 DEBUG Main:49 - choixMenu = 1
+2019-05-30 10:12:19 INFO  Main:56 - Mode Challenger Activé
+2019-05-30 10:12:22 INFO  Main:81 - Nombre de chiffre OK
+2019-05-30 10:12:25 INFO  Main:81 - Nombre de chiffre OK
+2019-05-30 10:12:28 INFO  Main:81 - Nombre de chiffre OK
+2019-05-30 10:12:28 INFO  Main:117 - Vous avez gagner
+2019-05-30 10:12:30 INFO  Main:30 - Menu du jeu
+2019-05-30 10:12:32 DEBUG Main:37 - choixMenu = 5

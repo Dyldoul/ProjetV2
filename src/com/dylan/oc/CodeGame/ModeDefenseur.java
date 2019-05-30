@@ -38,6 +38,10 @@ public class ModeDefenseur extends CodeGame {
 
     //Méthodes
 
+    /**
+     * Permet a l'ordinateur de changer de testCode en suivant les indication de l'utilisateur
+     * @param indicationUser Indication de l'utilisateur
+     */
     public void nouveauTestCode(String indicationUser){
 
         String strTestCode = Integer.toString(testCode);//Transforme le nombre en String
@@ -54,14 +58,14 @@ public class ModeDefenseur extends CodeGame {
 
             if (caracIndicUser.equals("+")){
 
-                nouveauChiffre = random.nextInt(9-chfrTest)+chfrTest;//le chiffre testé devient le minimum a rechercher
+                nouveauChiffre = random.nextInt(9-chfrTest)+chfrTest;//Le chiffre testé devient le minimum a rechercher
                 String strNouveauChiffre = Integer.toString(nouveauChiffre);
                 tableauChiffre[i] = strNouveauChiffre;
                 strNouveauCode += tableauChiffre[i];
 
             } else if (caracIndicUser.equals("-")){
 
-                nouveauChiffre = random.nextInt(chfrTest-1);//le chiffre testé devient le maximum a rechercher
+                nouveauChiffre = random.nextInt(chfrTest-1);//Le chiffre testé devient le maximum a rechercher
                 String strNouveauChiffre = Integer.toString(nouveauChiffre);
                 tableauChiffre[i] = strNouveauChiffre;
                 strNouveauCode += tableauChiffre[i];
