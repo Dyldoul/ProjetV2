@@ -23,6 +23,7 @@ public class Main {
         int choixMenu; //Variable de navigation dans le menu
         char modeDev;//Variable pour acitvé le mode développeur
         int exit; // Variable pour quitter un jeu ou non a la fin
+        String strNombreJoueur;//Pour controle de la saisie utilisateur
         CodeGame jeu = new CodeGame();
 
             do {//Menu du jeu
@@ -39,6 +40,8 @@ public class Main {
                     switch (choixMenu) {
 
                         case 1://Menu des mode de jeux
+
+                            logger.info("Choix mode de jeux");
 
                             System.out.println("A quel mode voulez-vous jouer ?");
                             System.out.println("1 - Mode Challenger (Vous devez trouver le nombre secret)");
@@ -74,7 +77,7 @@ public class Main {
                                             System.out.println("Veuillez entrer un nombre a " + jeu.getNombreDeChiffre() + " chiffres");
                                             System.out.println("--------------------------------------------------");
                                             joueur1.checkNombreJoueur(scan.nextInt());
-                                            String strNombreJoueur = Integer.toString(joueur1.getNombreJoueur());//Pour le controle de la saisie
+                                            strNombreJoueur = Integer.toString(joueur1.getNombreJoueur());//Pour le controle de la saisie
 
                                             if (strNombreJoueur.length() == jeu.getNombreDeChiffre()) {//Si nombre ok
 
@@ -122,6 +125,7 @@ public class Main {
                                         System.out.println();
                                         System.out.println("Voulez-vous recommencer ? 1-Oui / 2-Non");
                                         exit = scan.nextInt();
+                                        logger.info("exit = " + exit);
 
                                     } while (exit != 2 && exit == 1); //Recommencer ou non le jeu
 
@@ -140,7 +144,6 @@ public class Main {
                                         System.out.println("Mode Défenseur activé");
                                         jeu.nombreAleatoire();
                                         System.out.println();
-                                        String strNombreJoueur;
 
                                         do {//Boucle de vérifiaction de la taille du code secret de l'utilisateur
 
@@ -178,7 +181,7 @@ public class Main {
 
                                             } else if (strNombreJoueur.length() > jeu.getNombreDeChiffre()) {//Si nombre trop grand
 
-                                                logger.debug("Nombre de chiffre donnée trop petit");
+                                                logger.debug("Nombre de chiffre donnée trop grand");
                                                 System.out.println();
                                                 System.out.println("Vous avez entrer un nombre trop grand");
                                                 System.out.println();
@@ -208,6 +211,7 @@ public class Main {
                                         System.out.println();
                                         System.out.println("Voulez-vous recommencer ? 1-Oui / 2-Non");
                                         exit = scan.nextInt();
+                                        logger.info("exit = " + exit);
 
                                     } while (exit != 2 && exit == 1); //Recommencer ou non le jeu
 
@@ -229,13 +233,34 @@ public class Main {
                                         System.out.println("Jouer a tour de rôle ! Le premier a trouver le code secret de l'autre a gagner !");
                                         System.out.println("Vous jouer en premier !");
                                         jeu.nombreAleatoire();
-                                        challenger1.setCodeSecret(jeu.getNombreOrdi());
-                                        System.out.println("Veuillez entrer votre code secret à " + jeu.getNombreDeChiffre() + " chiffres :");
-                                        System.out.println("--------------------------------------------------");
-                                        joueur1.checkNombreJoueur(scan.nextInt());
-                                        defenseur1.setCodeSecret(joueur1.getNombreJoueur());
+                                        challenger1.setCodeSecret(jeu.getNombreOrdi());//Le nombre aléatoire deviens le code secret de l'ordinateur
+
+                                        do {
+                                            System.out.println("Veuillez entrer votre code secret à " + jeu.getNombreDeChiffre() + " chiffres :");
+                                            System.out.println("--------------------------------------------------");
+                                            joueur1.checkNombreJoueur(scan.nextInt());
+                                            strNombreJoueur = Integer.toString(joueur1.getNombreJoueur());//Pour le controle de la saisie
+
+                                            if (strNombreJoueur.length() < jeu.getNombreDeChiffre()) {//Si nombre entré trop petit
+
+                                                logger.debug("Nombre de chiffre donnée trop petit");
+                                                System.out.println();
+                                                System.out.println("Vous avez entrer un nombre trop petit");
+                                                System.out.println();
+
+                                            } else if (strNombreJoueur.length() > jeu.getNombreDeChiffre()) {//Si nombre entré trop grand
+
+                                                logger.debug("Nombre de chiffre donnée trop petit");
+                                                System.out.println();
+                                                System.out.println("Vous avez entrer un nombre trop grand");
+                                                System.out.println();
+                                            }
+
+                                        } while (strNombreJoueur.length() != jeu.getNombreDeChiffre());//Jusqu'a la saisie correct
+
+                                        defenseur1.setCodeSecret(joueur1.getNombreJoueur());//Le nombre saisie deviens le code secret du joueur
                                         jeu.nombreAleatoire();
-                                        defenseur1.setTestCode(jeu.getNombreOrdi());
+                                        defenseur1.setTestCode(jeu.getNombreOrdi());//L'ordinateur teste un autre nombre aléatoire
 
                                         do { //Boucle tans que l'ordi ou l'utilisateur n'a pas trouver la solution
 
@@ -247,20 +272,42 @@ public class Main {
                                             }
                                             System.out.println("Veuillez entrer un nombre a " + jeu.getNombreDeChiffre() + " chiffres");
                                             System.out.println("--------------------------------------------------");
-                                            joueur1.checkNombreJoueur(scan.nextInt());
-                                            challenger1.setTestCode(joueur1.getNombreJoueur());
-                                            challenger1.check();
-                                            System.out.println();
-                                            System.out.println("L'ordinateur essaye de touver votre code !");
-                                            System.out.println("Votre code secret est : " + defenseur1.getCodeSecret());
-                                            System.out.println("L'ordinateur propose : " + defenseur1.getTestCode());
-                                            System.out.println("Donner lui une indication (+ - =)");
-                                            System.out.println("--------------------------------------------------");
-                                            scan.nextLine();
-                                            joueur1.setIndicationJoueur(scan.nextLine());
-                                            defenseur1.nouveauTestCode(joueur1.getIndicationJoueur());
-                                            nbrEssaie--;
-                                            System.out.println();
+
+                                            if (strNombreJoueur.length() < jeu.getNombreDeChiffre()) {//Si nombre trop petit
+
+                                                logger.debug("Nombre de chiffre donnée trop petit");
+                                                System.out.println();
+                                                System.out.println("Vous avez entrer un nombre trop petit");
+                                                System.out.println("Veuillez en entrer un autre  à "+jeu.getNombreDeChiffre()+" chiffres");
+                                                System.out.println();
+
+                                            } else if (strNombreJoueur.length() > jeu.getNombreDeChiffre()) {//Si nombre trop grand
+
+                                                logger.debug("Nombre de chiffre donnée trop grand");
+                                                System.out.println();
+                                                System.out.println("Vous avez entrer un nombre trop grand");
+                                                System.out.println("Veuillez en entrer un autre  à "+jeu.getNombreDeChiffre()+" chiffres");
+                                                System.out.println();
+
+                                            } else if (strNombreJoueur.length() == jeu.getNombreDeChiffre()) {
+                                                joueur1.checkNombreJoueur(scan.nextInt());
+                                                challenger1.setTestCode(joueur1.getNombreJoueur());
+                                                challenger1.check();
+                                                System.out.println();
+                                                System.out.println("--------------------------------------------------");
+                                                System.out.println();
+                                                System.out.println("L'ordinateur essaye de touver votre code !");
+                                                System.out.println("Votre code secret est : " + defenseur1.getCodeSecret());
+                                                System.out.println("L'ordinateur propose : " + defenseur1.getTestCode());
+                                                System.out.println("Donner lui une indication (+ - =)");
+                                                System.out.println("--------------------------------------------------");
+                                                scan.nextLine();
+                                                joueur1.setIndicationJoueur(scan.nextLine());
+                                                defenseur1.nouveauTestCode(joueur1.getIndicationJoueur());
+                                                nbrEssaie--;
+                                                System.out.println();
+
+                                            }
 
                                         } while (defenseur1.getCodeSecret() != defenseur1.getTestCode() && challenger1.getCodeSecret() != challenger1.getTestCode() && nbrEssaie >= 0);
 
@@ -291,6 +338,7 @@ public class Main {
                                         System.out.println();
                                         System.out.println("Voulez-vous recommencer ? 1-Oui / 2-Non");
                                         exit = scan.nextInt();
+                                        logger.info("exit = " + exit);
 
                                     } while (exit != 2 && exit == 1); //Recommencer ou non le jeu
 

@@ -31,10 +31,6 @@ public class CodeGame {
         return nombreEssai;
     }
 
-    public void setNombreEssai(int nombreEssai) {
-        this.nombreEssai = nombreEssai;
-    }
-
     public int getNombreDeChiffre() {
         return nombreDeChiffre;
     }

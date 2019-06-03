@@ -23,3 +23,5 @@ Paramètre vous permettra de modifié la difficulté des jeux :
 - Lancer l'application en mode développeur
 
 Le mode développeur permettra de voir la solution directement au début du jeu (sauf pour le mode défenseur où c'est vous qui donner la combinaison)
+
+Vous trouverez également un fichier config.properties qui vous permettra de configurer ces paramètres par défault, vous le trouverez dans src/com/dylan/oc/Ressource/Config
