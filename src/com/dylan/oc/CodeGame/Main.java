@@ -44,9 +44,9 @@ public class Main {
                             logger.info("Choix mode de jeux");
 
                             System.out.println("A quel mode voulez-vous jouer ?");
-                            System.out.println("1 - Mode Challenger (Vous devez trouver le nombre secret)");
-                            System.out.println("2 - Mode Défenseur (vous devez définir le code secret)");
-                            System.out.println("3 - Mode Duel (le premier qui trouve le nombre secret de l'autre a gagné)");
+                            System.out.println("1 - Mode Challenger (Vous devez trouver le code secret)");
+                            System.out.println("2 - Mode Défenseur (L'ordinateur doit trouver le code secret)");
+                            System.out.println("3 - Mode Duel (Le premier qui trouve le code secret de l'autre a gagné)");
                             System.out.println("---------------------------------------------------");
                             choixMenu = scan.nextInt();
                             logger.debug("choixMenu = "+choixMenu);
@@ -64,13 +64,13 @@ public class Main {
                                         System.out.println("Mode Challenger Activé");
                                         jeu.nombreAleatoire();//L'ordinateur choisi un nombre aléatoire
                                         System.out.println();
-                                        System.out.println("NOMBRE SECRET ACTIVE");
+                                        System.out.println("CODE SECRET ACTIVE");
                                         System.out.println("Serez-vous assez fort pour le trouver ?");
 
-                                        do {//Boucle tans que l'on a pas trouvé le nombre secret
+                                        do {//Boucle tans que l'on a pas trouvé le code secret
 
                                             if (jeu.isModeDeveloppeur()) {
-                                                System.out.println("Le nombre secret est : " + jeu.getNombreOrdi());
+                                                System.out.println("Le code secret est : " + jeu.getNombreOrdi());
                                             }
                                             System.out.println();
                                             System.out.println("Il vous reste " + nbrEssaie + " essais");
@@ -119,7 +119,7 @@ public class Main {
 
                                             logger.info("Vous avez gagner");
                                             System.out.println();
-                                            System.out.println("Félicitation vous avez trouvé le nombre secret !");
+                                            System.out.println("Félicitation vous avez trouvé le code secret !");
                                             System.out.println();
                                         }
                                         System.out.println();
@@ -373,11 +373,11 @@ public class Main {
                                         logger.info("Paramètre nombre de chiffre");
                                         System.out.println();
                                         int nombreChiffre;
-                                        System.out.println("Combien de chiffre voulez vous trouver ?");
+                                        System.out.println("Combien de chiffres voulez vous trouver ?");
                                         nombreChiffre = scan.nextInt();
                                         jeu.paramNbrChiffre(nombreChiffre);
                                         System.out.println();
-                                        System.out.println("Vous allez chercher un nombre a "+jeu.getNombreDeChiffre()+" chiffre");
+                                        System.out.println("Vous allez chercher un nombre a "+jeu.getNombreDeChiffre()+" chiffres");
                                         logger.debug("nombreChiffre = "+nombreChiffre);
                                         System.out.println();
                                         break;

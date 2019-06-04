@@ -22,3 +22,27 @@
 2019-06-03 15:34:58 INFO  Main:203 - Vous avez perdu
 2019-06-03 15:35:01 INFO  Main:31 - Menu du jeu
 2019-06-03 15:35:02 DEBUG Main:38 - choixMenu = 5
+2019-06-04 16:46:00 INFO  Main:18 - Début du jeu
+2019-06-04 16:46:00 INFO  Main:31 - Menu du jeu
+2019-06-04 16:48:46 INFO  Main:18 - Début du jeu
+2019-06-04 16:48:46 INFO  Main:31 - Menu du jeu
+2019-06-04 16:48:48 DEBUG Main:38 - choixMenu = 1
+2019-06-04 16:48:48 INFO  Main:44 - Choix mode de jeux
+2019-06-04 16:49:04 INFO  Main:18 - Début du jeu
+2019-06-04 16:49:04 INFO  Main:31 - Menu du jeu
+2019-06-04 16:49:06 DEBUG Main:38 - choixMenu = 1
+2019-06-04 16:49:06 INFO  Main:44 - Choix mode de jeux
+2019-06-04 16:52:09 INFO  Main:18 - Début du jeu
+2019-06-04 16:52:09 INFO  Main:31 - Menu du jeu
+2019-06-04 16:52:13 DEBUG Main:38 - choixMenu = 1
+2019-06-04 16:52:13 INFO  Main:44 - Choix mode de jeux
+2019-06-04 16:52:14 DEBUG Main:52 - choixMenu = 1
+2019-06-04 16:52:14 INFO  Main:59 - Mode Challenger Activé
+2019-06-04 16:52:18 INFO  Main:84 - Nombre de chiffre OK
+2019-06-04 17:24:21 INFO  Main:18 - Début du jeu
+2019-06-04 17:24:21 INFO  Main:31 - Menu du jeu
+2019-06-04 17:24:22 DEBUG Main:38 - choixMenu = 2
+2019-06-04 17:24:22 INFO  Main:356 - Parametre du jeu
+2019-06-04 17:24:23 DEBUG Main:367 - choixMenu = 1
+2019-06-04 17:24:23 INFO  Main:373 - Paramètre nombre de chiffre
+2019-06-04 17:24:25 DEBUG Main:381 - nombreChiffre = 6
